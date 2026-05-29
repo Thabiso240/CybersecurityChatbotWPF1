@@ -1,0 +1,44 @@
+name: CI — Build & Verify (WPF)
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    name: Build on Windows (WPF requires windows-latest)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore NuGet packages
+        run: dotnet restore CybersecurityChatbotWPF.sln
+
+      - name: Build in Release mode
+        run: dotnet build CybersecurityChatbotWPF.sln --configuration Release --no-restore
+
+      - name: Verify executable exists
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Recurse -Filter "CybersecurityChatbotWPF.exe" | Select-Object -First 1
+          if ($null -eq $exe) {
+            Write-Error "Build output not found — build may have failed."
+            exit 1
+          }
+          Write-Host "Build verified: $($exe.FullName)"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: CybersecurityChatbotWPF-Release
+          path: "**/Release/net8.0-windows/**/*.exe"
+          if-no-files-found: warn

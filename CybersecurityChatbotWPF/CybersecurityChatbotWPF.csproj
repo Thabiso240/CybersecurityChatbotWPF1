@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>CybersecurityChatbotWPF</AssemblyName>
+    <RootNamespace>CybersecurityChatbotWPF</RootNamespace>
+    <ApplicationIcon />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Include greeting.wav as a resource so it is embedded in the output -->
+    <Resource Include="Resources\greeting.wav" Condition="Exists('Resources\greeting.wav')" />
+  </ItemGroup>
+
+</Project>
