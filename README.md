@@ -176,28 +176,12 @@ Steps:
 5. Verify the `.exe` output exists
 6. Upload the build artifact
 
-> **After your first push:** add a screenshot of the green ✅ check mark from the Actions tab here.
 
-![CI Badge](https://github.com/<your-username>/CybersecurityChatbotWPF/actions/workflows/ci.yml/badge.svg)
-
----
-
-## 📝 Suggested Git Commit Messages
-
-```
-Initial commit: Set up WPF solution structure and .csproj
-Added App.xaml global dark-theme colour palette and button styles
-Implemented ResponseEngine with keyword recognition and random responses
-Added UserMemory model with automatic properties and topic tracking
-Implemented sentiment detection with empathetic response prefixes
-Completed MainWindow XAML layout with ASCII art, status bar, and input area
-Implemented animated chat bubbles and message queue in MainWindow code-behind
-Added AudioService for async WAV greeting playback
-Added GitHub Actions CI workflow for Windows WPF build
-Final integration: conversation flow, memory recall, delegate wiring, README
 ```
 
 ---
+<img width="1366" height="768" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/6e7c2374-4433-46d0-8d45-1f0052756c5a" />
+<img width="1366" height="768" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/73ce764d-c7fa-4c0e-bdc3-b0403adfb27d" />
 
 ## 🎥 Video Presentation
 
@@ -211,6 +195,4 @@ The video covers:
 
 ---
 
-## 🔒 References
 
-Pieterse, H. 2021. The Cyber Threat Landscape in South Africa: A 10-Year Review. *The African Journal of Information and Communication*, 28(28). https://doi.org/10.23962/10539/32213
